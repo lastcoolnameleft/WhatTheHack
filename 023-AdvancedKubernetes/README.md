@@ -57,6 +57,12 @@ Before starting this hack you should have hands-on experience with the following
    1. Dynamic provisioning with Azure Disks
    1. Scaling persistent applications with Azure Disks
    1. Scaling persistent applications with Azure Files
+1. [AKS Automatic](./Student/08-aks-automatic.md)
+   1. Create an AKS Automatic cluster
+   1. Validate the AKS Automatic cluster
+   1. Deploy Sample App to AKS Automatic cluster
+   1. Networking + Observability
+   1. Load Test + Scale App
 
 ## Prerequisites
 
@@ -68,6 +74,7 @@ Before starting this hack you should have hands-on experience with the following
 - Tommy Falgout
 - Kevin M. Gates
 - Michelle Yang
+- Eric Leonard
 
 ## Quotes
 
