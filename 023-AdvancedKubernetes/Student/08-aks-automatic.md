@@ -139,3 +139,4 @@ Deploy an instance of Azure Load Testing and use it to scale the `order-service`
 ### Questions
 
 - What does it mean that the memory utilization was set to 120?
+- How fast did it scale?
