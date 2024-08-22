@@ -9,11 +9,11 @@ Questions
 - How many workloads are deployed into cluster upon creation?
     - Should be about 12-13, mostly in kube-system
 - What is:
-    - Eraser? [Introduction | Eraser Docs (eraser-dev.github.io)](https://eraser-dev.github.io/eraser/docs/) Deleted unused images
-    - Gatekeeper? [GitHub - open-policy-agent/gatekeeper: 🐊 Gatekeeper - Policy Controller for Kubernetes](https://github.com/open-policy-agent/gatekeeper) Policy Controller. Works with Open Policy Agent (OPA)
-    - VPA? [Vertical pod autoscaling in Azure Kubernetes Service (AKS) - Azure Kubernetes Service | Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/vertical-pod-autoscaler) Vertical Pod Autoscaler
-    - KEDA? [KEDA | Kubernetes Event-driven Autoscaling](https://keda.sh/) Kubernetes Event-driven Autoscaling
-    - Cilium? [Configure Azure CNI Powered by Cilium in Azure Kubernetes Service (AKS) - Azure Kubernetes Service | Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/azure-cni-powered-by-cilium) OSS Network CNI
+    - Eraser? [Eraser Docs](https://eraser-dev.github.io/eraser/docs/) Deleted unused images
+    - Gatekeeper? [GitHub - open-policy-agent/gatekeeper: 🐊](https://github.com/open-policy-agent/gatekeeper) Policy Controller. Works with Open Policy Agent (OPA)
+    - VPA? [Vertical pod autoscaling in Azure Kubernetes Service (AKS)](https://learn.microsoft.com/en-us/azure/aks/vertical-pod-autoscaler) Vertical Pod Autoscaler
+    - KEDA? [Kubernetes Event-driven Autoscaling](https://keda.sh/) 
+    - Cilium? [Configure Azure CNI Powered by Cilium in Azure Kubernetes Service (AKS)](https://learn.microsoft.com/en-us/azure/aks/azure-cni-powered-by-cilium) OSS Network CNI
 - Notice how there's still an "MC_" resource group created. What happens if you try to delete it?
     - Azure won't let you delete it
 - What policies are automatically created?
@@ -38,10 +38,11 @@ kubectl apply -n aks-store-demo -f https://raw.githubusercontent.com/Azure-Sampl
 
 # Might take a few minutes
 
-➜  ~ kg scaledobjects.keda.sh
-+ kubectl get scaledobjects.keda.sh
+```
+$ kubectl get scaledobjects.keda.sh
 NAME        SCALETARGETKIND      SCALETARGETNAME   MIN   MAX   TRIGGERS   AUTHENTICATION   READY   ACTIVE   FALLBACK   PAUSED    AGE
-nginx-cpu   apps/v1.Deployment   store-front       1     100   cpu                         True    True     Unknown    Unknown   3s                                        [0.7s]`
+nginx-cpu   apps/v1.Deployment   store-front       1     100   cpu                         True    True     Unknown    Unknown   3s
+```
 
 Questions:
 

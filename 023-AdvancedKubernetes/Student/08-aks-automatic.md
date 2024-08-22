@@ -4,6 +4,10 @@ Operating and managing Kubernetes (and even AKS) has gotten very complex. AKS Au
 
 Automatic clusters are optimized to run most production workloads and provision compute resources based on Kubernetes manifests. The streamlined configuration follows AKS best practices and recommendations for cluster and workload setup, scalability, and security, freeing developers to run cloud native apps without spending too much time on managing clusters.
 
+![](img/aks-automatic-2.png)
+
+---
+
 ## Sub-Challenge 1: Create an AKS Automatic cluster
 
 ### Description
@@ -27,6 +31,8 @@ AKS Automatic will manage cluster setup, including node management, scaling, sec
 - What did you notice that's different from previous AKS deployments?
 - How long did the full deployment take?
 
+---
+
 ## Sub-Challenge 2: Validate the AKS Automatic cluster
 
 ### Description
@@ -49,6 +55,8 @@ Now that our cluster is being created, let's look inside and see how it operates
 - What policies are automatically created?
 - How many nodes are in the cluster? What type?
 
+---
+
 ## Sub-Challenge 3: Deploy Sample App to AKS Automatic cluster
 
 We will use the AKS Store Demo as the example application.
@@ -67,16 +75,31 @@ Deploy [aks-store-demo](https://github.com/Azure-Samples/aks-store-demo) to your
 - How is traffic routed to the `store-front` IP?
 - How many nodes are in the cluster now?
 
+---
+
 ## Sub-Challenge 4: Networking + Observability
+
+As you've hopefully noticed by now, AKS takes a lot of defaults and bundles them into a single package.  This includes networking both and observability configuration.  This subchallenge is less about making a change, but more about understanding what is available to you.
+
+For example Azure Managed Grafana and Prometheus are auto-installed and configured:
+![](img/grafana.png)
 
 ### Success Criteria
 
-- Log into Grafana and view the ??? Dashboard
+- Log into the deployed Azure Managed Grafana instance
+- View the `Kubernetes / Compute Resources / Cluster` dashboard
+- What other metrics can you see automatically?
+- View the Log from `KubeEvents`
 
 ### Questions
 
-- What's your Pod Address range?
-- 
+- What is the CNI?  
+- What's your Pod Address range? 
+- What's your VNet's Address range?
+    - Do they overlap or not? Why?
+- What other built-in dashboards are there?
+
+---
 
 ## Sub-Challenge 5: Load Test + Scale App
 
